@@ -1,0 +1,55 @@
+/* .App {
+  text-align: center;
+} */
+
+.timer{
+  display: inline-block;
+  /* margin-left: 50px; */
+}
+
+.options {
+  display: block;
+  flex-direction: row; /* Change flex direction to column for left alignment */
+}
+
+.option.correct {
+  background-color: #28a745 !important;
+  color: #fff;
+}
+
+.option {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+
+  &.selected {
+    background-color: #0056b3;
+  }
+
+  &.disabled {
+    opacity: 1 !important; /* Ensure the opacity is not reduced for selected options after submission */
+  }
+}
+
+.btn-black {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
