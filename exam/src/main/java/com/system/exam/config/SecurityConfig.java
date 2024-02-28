@@ -21,15 +21,42 @@ public class SecurityConfig{
 
 
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> {
-            auth.anyRequest().authenticated();
-        })
-                .oauth2Login(Customizer.withDefaults())
+                    auth.anyRequest().authenticated();
+                })
+                .oauth2Login(oauth2Login ->
+                                oauth2Login
+                                .defaultSuccessUrl("http://localhost:3000/home", true))
+//                .oauth2Login(Customizer.withDefaults())
+
                 .build();
+
+//        httpSecurity
+//                .cors(Customizer.withDefaults())
+////                .cors(corsConfigurationSource())
+//                .csrf(AbstractHttpConfigurer::disable)
+//                .authorizeHttpRequests(authorizeRequests ->
+//                        authorizeRequests
+//                                .requestMatchers("/", "/login**", "/error**").permitAll() // Adjust the patterns accordingly
+//                                .anyRequest().authenticated()
+//                )
+//                .oauth2Login(oauth2Login ->
+//                                oauth2Login
+////                                .defaultSuccessUrl("http://localhost:3000/home", true)
+//                                        .authorizationEndpoint(e ->
+//                                                e.baseUri("/api/oauth2/authorization"))
+//                                        .redirectionEndpoint(e ->
+//                                                e.baseUri("/login/oauth2/code/google"))
+//                )
+//                .build();
+////                                                .authorizationRequestResolver())
+////                                .authorizationRequestResolver(new CustomAuthorizationRequestResolver())
+//
+
     }
 
     @Bean

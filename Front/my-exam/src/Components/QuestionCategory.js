@@ -104,10 +104,9 @@ const QuestionCategory = ({ category }) => {
     <div className="container text-center">
       
   
-
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
 
-        <Link to="/" className="btn btn-primary rounded-pill mr-4 mt-2">
+        <Link to="/home" className="btn btn-primary rounded-pill mr-4 mt-2">
           Home Page
         </Link>
       </nav>

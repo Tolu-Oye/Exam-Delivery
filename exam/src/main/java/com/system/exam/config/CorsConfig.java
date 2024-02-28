@@ -12,11 +12,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
+
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000")  // Add the origin of your React app
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowCredentials(true)
-                .allowedHeaders("*");
+                .allowedOrigins("http://localhost:3000")
+                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+//                .maxAge(MAX_AGE_SECS);
     }
 
     @Bean

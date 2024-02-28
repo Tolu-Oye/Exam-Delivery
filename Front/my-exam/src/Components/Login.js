@@ -1,24 +1,20 @@
-import { useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
+import googleLogo from '../img/google-logo.png'
 import axios from 'axios';
 
+const url = 'http://localhost:8080/api/oauth2/authorization/google'
 const Login = () => {
-  const navigate = useNavigate();
 
-  const handleLogin = async () => {
-    // Make a request to initiate OAuth2 login on the backend
-    const response = await fetch('http://localhost:8080/api/oauth2/authorization/google');
-
-    // Redirect the user to the authorization URL received from the backend
-    window.location.href = response.data.authorizationUrl;
-
-    // Alternatively, you can use navigate to redirect programmatically
-    // navigate('/home');
-  };
 
   return (
     <div>
       <h2>Login Page</h2>
-      <button onClick={handleLogin}>Login with Google</button>
+      <a className="btn btn-dark social-btn google" href={url}>
+
+      <img src={googleLogo} alt="Google" />
+          Log in with Google
+        </a>
+      
     </div>
   );
 };

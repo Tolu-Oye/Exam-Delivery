@@ -9,6 +9,10 @@ return (
       <h1 className="display-1 font-weight-bold text-primary mt-5" style={{ fontFamily: 'Roboto, sans-serif' }}>
         OYEWUSI EDUCATION
       </h1>
+
+      <Link to="/profile" className="btn btn-dark rounded-pill py-2 px-4 shadow-sm">
+              Profile
+            </Link>
       <nav className="mt-5">
         <ul className="list-unstyled">
           <li className="mb-4">
