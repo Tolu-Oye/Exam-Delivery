@@ -22,7 +22,7 @@ services:
   mysql-db:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: toluwussy
+      MYSQL_ROOT_PASSWORD: 
       MYSQL_DATABASE: exam_db
       MYSQL_USER: springstudent
       MYSQL_PASSWORD: springstudent
