@@ -7,15 +7,28 @@ const Login = () => {
 
 
   return (
-    <div>
-      <h2>Login Page</h2>
-      <a className="btn btn-dark social-btn google" href={url}>
-
-      <img src={googleLogo} alt="Google" />
-          Log in with Google
-        </a>
-      
+    <div className="container mt-5">
+      <div className="col-md-6 offset-md-3">
+        <div className="card">
+          <div className="card-body text-center">
+            <h2 className="mb-4">Login</h2>
+            <a href={url} className="btn btn-outline-dark btn-lg btn-block">
+              <img src={googleLogo} alt="Google Logo" className="mr-2" />
+              Log in with Google
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+    // <div>
+    //   <h2>Login Page</h2>
+    //   <a className="btn btn-dark social-btn google" href={url}>
+
+    //   <img src={googleLogo} alt="Google" />
+    //       Log in with Google
+    //     </a>
+      
+    // </div>
   );
 };
 

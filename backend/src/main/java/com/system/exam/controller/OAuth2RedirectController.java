@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 @RestController
 public class OAuth2RedirectController {
 
-    private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(OAuth2RedirectController.class);
+//    private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(OAuth2RedirectController.class);
     @Value("${spring.security.oauth2.client.registration.google.client-id}")
     private String clientId;
 
@@ -47,9 +47,11 @@ public class OAuth2RedirectController {
             requestBody.add("client_secret", clientSecret);
             requestBody.add("grant_type", "authorization_code");
             requestBody.add("redirect_uri", redirectUri);
+//            requestBody.add("access_type", "offline");
+
 
 //            LOGGER.info("Request Body: {}", convertMultiValueMapToString(requestBody));
-            LOGGER.info(convertMultiValueMapToString(requestBody));
+//            LOGGER.info(convertMultiValueMapToString(requestBody));
 //            System.out.println(requestBody);
 
             HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(requestBody, headers);
