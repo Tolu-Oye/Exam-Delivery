@@ -22,9 +22,9 @@ services:
   mysql-db:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: 
+      MYSQL_ROOT_PASSWORD:
       MYSQL_DATABASE: exam_db
-      MYSQL_USER: springstudent
-      MYSQL_PASSWORD: springstudent
+      MYSQL_USER:
+      MYSQL_PASSWORD: 
     ports:
-      - "3306:3306"
+      - "3307:3306"

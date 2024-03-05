@@ -5,7 +5,7 @@ FROM eclipse-temurin:17
 WORKDIR /app
 
 # Copy the application JAR file into the container at the specified working directory
-COPY target/your-spring-boot-app.jar /app/
+COPY target/exam-0.0.1-SNAPSHOT.jar /app/
 
 # Specify the command to run on container startup
-CMD ["java", "-jar", "your-spring-boot-app.jar"]
+CMD ["java", "-jar", "exam-0.0.1-SNAPSHOT.jar"]

@@ -34,7 +34,7 @@ public class SecurityConfig{
                 })
                 .oauth2Login(oauth2Login ->
                                 oauth2Login
-                                .defaultSuccessUrl(reactUrl+"/home", true))
+                                .defaultSuccessUrl("http://localhost:3000/home", true))
 //                .oauth2Login(Customizer.withDefaults())
 
                 .build();
@@ -66,7 +66,7 @@ public class SecurityConfig{
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of(reactUrl));  // Replace with your React app's URL
+        configuration.setAllowedOrigins(List.of("http://localhost:3000"));  // Replace with your React app's URL
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
         configuration.setAllowCredentials(true);
